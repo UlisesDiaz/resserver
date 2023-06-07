@@ -14,9 +14,9 @@ npm install
 ## Uso
 
 1. Ejecuta la aplicación con el siguiente comando:
-
+``` bash
 npm start
-
+```
 2. Abre tu navegador y ve a `http://localhost:3000` para ver la aplicación.
 
 ## Contribución

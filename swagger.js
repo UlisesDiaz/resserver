@@ -10,14 +10,27 @@ const options = {
             title: 'API Documentación',
             version: '1.0.0',
             description: 'Documentación de mi API',
-        },
+        }, components: {
+            securitySchemes: {
+              bearerAuth: {
+                type: 'http',
+                scheme: 'bearer',
+                bearerFormat: 'JWT',
+              },
+            },
+          },
+          security: [
+            {
+              bearerAuth: [],
+            },
+          ],
         servers: [
             {
                 url: `http://localhost:${process.env.PORT}`, // Reemplaza con la URL de tu API
             },
         ],
     },
-    apis: ['./src/routes/PersonaRoutes.js'], // Agrega la ruta a indexRoutes.js
+    apis: ['./src/routes/*.js'], // Agrega la ruta a indexRoutes.js
 };
 
 const specs = swaggerJsdoc(options);

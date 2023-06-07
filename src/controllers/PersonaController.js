@@ -65,6 +65,7 @@ const personaController = {
             res.apiError(error, 'Error al eliminar la persona.');
         }
     },
+    
 };
 
 module.exports = personaController;

@@ -2,6 +2,7 @@ const express = require('express');
 const personaController = require('../controllers/PersonaController');
 const personaValidationRules = require('../middlewares/validation/personaValidationRules');
 const validateRules = require('../middlewares/validation/validateMiddleware');
+const { authenticateToken } = require('../middlewares/authMiddleware');
 const router = express.Router();
 /**
  * @swagger
@@ -91,10 +92,10 @@ const router = express.Router();
  *         description: No se encontró la persona con el ID especificado.
  */
 
-router.get('/', personaController.getAll);
-router.get('/:id', personaController.getById);
-router.post('/', personaValidationRules.create, validateRules, personaController.create);
-router.put('/:id', personaValidationRules.update, validateRules, personaController.update);
-router.delete('/:id', personaController.delete);
+router.get('/', authenticateToken, personaController.getAll);
+router.get('/:id', authenticateToken, personaController.getById);
+router.post('/', authenticateToken, personaValidationRules.create, validateRules, personaController.create);
+router.put('/:id', authenticateToken, personaValidationRules.update, validateRules, personaController.update);
+router.delete('/:id', authenticateToken, personaController.delete);
 
 module.exports = router;

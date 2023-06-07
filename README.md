@@ -6,9 +6,9 @@ Breve descripción del proyecto y su propósito.
 
 1. Clona este repositorio en tu máquina local.
 2. Ejecuta el siguiente comando para instalar las dependencias:
-
+``` bash
 npm install
-
+```
 3. Configura las variables de entorno en el archivo `.env`.
 
 ## Uso
@@ -25,9 +25,9 @@ Si deseas contribuir a este proyecto, sigue estos pasos:
 
 1. Haz un fork de este repositorio.
 2. Crea una nueva rama para tu contribución:
-
+``` bash
 git checkout -b mi-rama-de-contribucion
-
+```
 
 3. Realiza los cambios y mejoras en tu rama local.
 4. Envía una solicitud de extracción (pull request) a la rama principal de este repositorio.
